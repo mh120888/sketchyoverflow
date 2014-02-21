@@ -29,6 +29,20 @@ h2 {
   width: 100%;
 }
 
+#nav {
+  padding: 0px 20px 40px 20px;
+  text-align: center;
+}
+
+#nav a {
+  color: #c7c2c0;
+  text-decoration: none;
+}
+
+#nav a:hover {
+  color: white;
+}
+
 .question {
   background-color: #c7c2c0;
   border-radius: 10px;
@@ -48,7 +62,11 @@ h2 {
 }
 
 .question form {
+  text-align: center;
+}
 
+#question_content {
+  width: 50%;
 }
 
 .question input {
