@@ -11,7 +11,8 @@ describe QuestionsController do
   context '#show' do
     let(:question) { FactoryGirl.create :question }
     it "assigns the question to @question" do
-
+      get :show, id: question.id
+      expect(assigns(:question)).to eq question
     end
   end
 

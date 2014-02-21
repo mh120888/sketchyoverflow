@@ -37,6 +37,7 @@ h1 {
 }
 
 .question h3 a:hover {
+  color: #6a4f63;
   text-decoration: underline;
 }
 
