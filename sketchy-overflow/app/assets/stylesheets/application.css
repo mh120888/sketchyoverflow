@@ -11,6 +11,14 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  color: #c7c2c0;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 1.6em;
+}
+
 #container {
   width: 60%;
   min-width: 600px;
@@ -37,4 +45,12 @@ h1 {
 
 .question p {
   font-size: 1.25em;
+}
+
+.question form {
+
+}
+
+.question input {
+  margin-top: 15px;
 }
