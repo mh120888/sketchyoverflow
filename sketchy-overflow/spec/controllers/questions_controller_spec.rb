@@ -11,6 +11,7 @@ describe QuestionsController do
   context '#show' do
     let(:user) { FactoryGirl.create :user }
     let(:question) { FactoryGirl.create :question, user: user }
+    let(:answer) { FactoryGirl.create :answer, question: question }
     it "assigns the question to @question" do
       get :show, id: question.id
       expect(assigns(:question)).to eq question
@@ -19,7 +20,10 @@ describe QuestionsController do
       get :show, id: question.id
       expect(assigns(:user)).to eq question.user
     end
-    it "assigns "
+    it "assigns associated answers to @answers" do
+      get :show, id: question.id
+      expect(assigns(:answers)).to eq question.answers_by_create_date
+    end
   end
 
   context '#new' do
