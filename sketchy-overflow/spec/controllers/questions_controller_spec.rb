@@ -19,6 +19,7 @@ describe QuestionsController do
       get :show, id: question.id
       expect(assigns(:user)).to eq question.user
     end
+    it "assigns "
   end
 
   context '#new' do
