@@ -1,4 +1,8 @@
 SketchyOverflow::Application.routes.draw do
+
+  resources :questions, except: [:edit, :update, :destroy]
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
