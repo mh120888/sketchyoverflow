@@ -2,12 +2,17 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
   end
+
   def show
     @question = Question.find(params[:id])
+    @user = @question.user
+    @answers = @question.answers_by_create_date
   end
+
   def new
     @question = Question.new
   end
+
   def create
     @question = Question.new(params[:question])
     if @question.save

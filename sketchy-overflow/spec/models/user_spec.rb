@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe User do
 
+  it { should have_many :questions }
+
   context "#authenticate" do
     let(:user) { FactoryGirl.create(:user) }
     it "should find existing user" do

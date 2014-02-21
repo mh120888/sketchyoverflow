@@ -6,14 +6,29 @@ body {
 h1 {
   font-family: 'Trade Winds', cursive;
   font-size: 5em;
-  color: #c7c2c0;
   letter-spacing: 5px;
   text-align: center;
 }
 
+h1 a {
+  color: #c7c2c0;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: #2fb05a;
+}
+
+#messages {
+  color: #2fb05a;
+  height: 40px;
+  text-align: center;
+  margin-top: -30px;
+}
+
 #container {
   width: 60%;
-  min-width: 600px;
+  min-width: 900px;
   margin: 0 auto;
 }
 
@@ -35,6 +50,50 @@ h1 {
   font-size: 1.6em;
 }
 
+.question h3 a {
+  color: #45243d;
+  text-decoration: none;
+}
+
+.question h3 a:hover {
+  color: #6a4f63;
+  text-decoration: underline;
+}
+
 .question p {
   font-size: 1.25em;
+}
+
+.full-question {
+  background-color: #c7c2c0;
+  border-radius: 10px;
+  width: 95%;
+  margin: 0 auto 50px auto;
+  padding: 10px 25px 25px 25px;
+}
+
+.full-question h2 {
+  color: #45243d;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 2.25em;
+}
+
+.full-question p {
+  font-size: 1.25em;
+}
+
+.info {
+  border-top: 1px solid #6a5c56;
+  margin-top: 50px;
+  padding-top: 15px;
+  color: #6a5c56;
+}
+
+.answer {
+  background-color: #c7c2c0;
+  font-size: 1.25em;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto 50px auto;
+  padding: 10px 25px 25px 25px;
 }

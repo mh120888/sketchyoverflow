@@ -1,8 +1,5 @@
 <div id="question_list">
   <% @questions.each do |question| %>
-    <div class="question">
-      <h3><%= question.title %></h3>
-      <p><%= question.content %></p>
-    </div>
+    <%= render 'question', question: question %>
   <% end %>
 </div>
