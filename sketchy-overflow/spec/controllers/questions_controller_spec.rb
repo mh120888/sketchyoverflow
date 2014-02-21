@@ -1,7 +1,14 @@
 require 'spec_helper'
 
-describe QuestionsController do 
-  describe '#new' do
+describe QuestionsController do
+  context '#index' do
+    it "assigns all questions to @questions" do
+      get :index
+      expect(assigns(:questions)).to eq Question.all
+    end
+  end
+
+  context '#new' do
     it 'creates a new instance of Question' do
       pending
     end
@@ -9,7 +16,8 @@ describe QuestionsController do
       pending
     end
   end
-  describe '#create' do
+
+  context '#create' do
     context 'valid params' do
       it 'saves a question to the database' do
         pending
