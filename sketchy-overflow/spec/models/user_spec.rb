@@ -12,4 +12,10 @@ describe User do
       expect(User.authenticate({})).to be_nil
     end
   end
+
+  context "encryption" do
+    it "should do stuff" do
+      pending
+    end
+  end
 end
