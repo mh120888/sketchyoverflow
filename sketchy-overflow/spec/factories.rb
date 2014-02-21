@@ -7,4 +7,9 @@ FactoryGirl.define do
   factory :answer do
     content { Faker::Lorem.sentence }
   end
+
+  factory :user do
+    name { 'bob' }
+    password { "bob" }
+  end
 end
