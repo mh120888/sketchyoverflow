@@ -34,3 +34,7 @@ h1 {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 1.6em;
 }
+
+.question p {
+  font-size: 1.25em;
+}
