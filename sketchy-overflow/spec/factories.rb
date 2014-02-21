@@ -8,6 +8,7 @@ FactoryGirl.define do
   end
 
   factory :user do
-    name { Faker::Lorem.name }
+    name { 'bob' }
+    password { "bob" }
   end
 end

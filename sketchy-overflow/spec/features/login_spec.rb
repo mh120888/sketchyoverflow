@@ -15,7 +15,9 @@ describe "login" do
     it "should create session" do
       visit new_session_path
       fill_in 'Username', :with => user.name
-      click "Login"
+      fill_in 'Password', :with => user.password
+      click_button "Login"
+      expect(page).to have_content user.name
     end
 
     it "should store user id" do
