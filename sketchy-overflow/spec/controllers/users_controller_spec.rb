@@ -41,5 +41,20 @@ describe UsersController do
       expect(response).to be_redirect
     end
 
+    it "should not create with an invalid password info" do
+      invalid = {name: "a", password: "a"}
+      expect {
+        post :create, user: invalid
+      }.to_not change { User.count }
+      expect(response).to be_success
+    end
+
+    it "should not create duplicate users" do
+      post :create, user: params
+      expect {
+        post :create, user: params
+      }.to_not change { User.count }
+      expect(response).to be_success
+    end
   end
 end
