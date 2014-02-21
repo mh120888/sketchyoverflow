@@ -6,16 +6,9 @@ describe QuestionsController do
       get :index
       expect(assigns(:questions)).to eq Question.all
     end
-  end
-
-  context '#new' do
     it 'creates a new instance of Question' do
-      get :new
+      get :index
       expect(assigns(:question)).to be_an_instance_of Question
-    end
-    it 'renders the #new template' do
-      get :new
-      expect(response).to render_template('new')
     end
   end
 

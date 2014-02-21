@@ -43,7 +43,7 @@ h2 {
   color: white;
 }
 
-.question {
+.question, .ask-question {
   background-color: #c7c2c0;
   border-radius: 10px;
   width: 100%;
@@ -61,14 +61,14 @@ h2 {
   font-size: 1.25em;
 }
 
-.question form {
-  text-align: center;
-}
-
 #question_content {
   width: 50%;
 }
 
-.question input {
+.ask-question form {
+  text-align: center;
+}
+
+.ask-question input {
   margin-top: 15px;
 }
