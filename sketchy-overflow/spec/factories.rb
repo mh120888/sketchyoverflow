@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :user do
-    name { 'bob' }
-    password { "bob" }
+    name { 'Test user' }
+    password { 'password123' }
   end
 end

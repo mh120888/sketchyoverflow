@@ -5,8 +5,8 @@ describe User do
   it { should have_many :questions }
 
   context "#authenticate" do
+    let(:user) { FactoryGirl.create(:user) }
     it "should find existing user" do
-      user = User.create(name: "foo", password: "bar")
       expect(User.authenticate({username: user.name, password: user.password}).class).to be User
     end
 
