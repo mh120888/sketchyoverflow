@@ -1,8 +1,12 @@
-<h1>Post a Question</h1>
+<h2>Post a Question</h2>
 
-<p>What's your question?</p>
-<%= form_for @question do |f| %>
-  <%= f.label :question_text %>:
-  <%= f.text_field :question_text %><br />
-  <%= f.submit, "Post" %>
-<% end %>
+<div class='question'>
+  <p>What's your question?</p>
+  <%= form_for @question do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %>
+    <%= f.label :content %>:
+    <%= f.text_field :content %><br/>
+    <%= f.submit %>
+  <% end %>
+</div>

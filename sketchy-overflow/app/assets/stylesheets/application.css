@@ -24,6 +24,13 @@ h1 a:hover {
   height: 40px;
   text-align: center;
   margin-top: -30px;
+
+h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  color: #c7c2c0;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 1.6em;
 }
 
 #container {
@@ -96,4 +103,12 @@ h1 a:hover {
   width: 80%;
   margin: 0 auto 50px auto;
   padding: 10px 25px 25px 25px;
+}
+
+.question form {
+
+}
+
+.question input {
+  margin-top: 15px;
 }
