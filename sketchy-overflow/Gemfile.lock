@@ -139,6 +139,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     rubyzip (1.1.0)
+    scrypt (1.1.0)
     selenium-webdriver (2.39.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -176,5 +177,6 @@ DEPENDENCIES
   pg
   rails (= 3.2.13)
   rspec-rails
+  scrypt (= 1.1.0)
   selenium-webdriver
   shoulda-matchers
