@@ -1,7 +1,7 @@
 <div id="question_list">
   <% @questions.each do |question| %>
     <div class="question">
-      <h3><%= question.title %></h3>
+      <h3><%= link_to question.title, question_path(question) %></h3>
       <p><%= question.content %></p>
     </div>
   <% end %>

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :questions
   attr_accessible :name, :password
   validates_presence_of :name, :password
 

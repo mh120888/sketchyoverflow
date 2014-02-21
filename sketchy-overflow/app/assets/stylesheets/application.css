@@ -29,10 +29,15 @@ h1 {
   padding: 10px 25px 25px 25px;
 }
 
-.question h3 {
+.question h3 a {
   color: #45243d;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 1.6em;
+  text-decoration: none;
+}
+
+.question h3 a:hover {
+  text-decoration: underline;
 }
 
 .question p {

@@ -8,6 +8,13 @@ describe QuestionsController do
     end
   end
 
+  context '#show' do
+    let(:question) { FactoryGirl.create :question }
+    it "assigns the question to @question" do
+
+    end
+  end
+
   context '#new' do
     it 'creates a new instance of Question' do
       pending
