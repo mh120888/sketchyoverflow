@@ -8,4 +8,14 @@ describe "Questions" do
       expect(page).to have_content(question.content)
     end
   end
+
+  context "#show" do
+    let!(:user) { FactoryGirl.create :user}
+    let!(:question) { FactoryGirl.create :question, user: user }
+    it "displays the question and user info" do
+      visit question_path(question)
+      expect(page).to have_content(question.content)
+      expect(page).to have_content(user.name)
+    end
+  end
 end
