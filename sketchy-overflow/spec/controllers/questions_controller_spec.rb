@@ -28,23 +28,28 @@ describe QuestionsController do
 
   context '#new' do
     it 'creates a new instance of Question' do
-      pending
+      get :new
+      expect(assigns(:question)).to be_an_instance_of Question
     end
     it 'renders the #new template' do
-      pending
+      get :new
+      expect(response).to render_template('new')
     end
   end
 
   context '#create' do
+    let!(:question) { FactoryGirl.create :question }
     context 'valid params' do
       it 'saves a question to the database' do
-        pending
+        expect(Question.last.id).to eq(question.id)
       end
       it 'redirects the user to the root path' do
         pending
+        expect(response).to redirect_to(root_path)
       end
       it 'creates a flash notice for the user advising post succeeded' do
         pending
+        expect(flash[:notice]).to eq('Question successfully posted')
       end
     end
     context 'invalid params' do
