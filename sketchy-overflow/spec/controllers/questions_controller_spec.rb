@@ -39,14 +39,6 @@ describe QuestionsController do
       it 'saves a question to the database' do
         expect(Question.last.id).to eq(question.id)
       end
-      it 'redirects the user to the root path' do
-        pending
-        expect(response).to redirect_to(root_path)
-      end
-      it 'creates a flash notice for the user advising post succeeded' do
-        pending
-        expect(flash[:notice]).to eq('Question successfully posted')
-      end
     end
     context 'invalid params' do
       it 'does not save the question to the database' do
