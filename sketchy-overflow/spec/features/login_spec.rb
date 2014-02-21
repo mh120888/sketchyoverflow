@@ -6,14 +6,12 @@ describe "login" do
       visit new_session_path
       expect(page).to have_content("login")
     end
-
   end
 
   context "can login" do
-    # let!(:user) { FactoryGirl.create(:user) }
+    let!(:user) { FactoryGirl.create(:user) }
 
     it "should create session" do
-      user = User.create(name: "bob", password: "bob")
       visit new_session_path
       fill_in 'Username', :with => user.name
       fill_in 'Password', :with => user.password
