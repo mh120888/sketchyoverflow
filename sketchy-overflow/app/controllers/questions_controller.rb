@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @user = @question.user
     @answers = @question.answers_by_create_date
+    @answer = Answer.new
   end
 
   def new
