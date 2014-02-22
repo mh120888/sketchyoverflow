@@ -12,7 +12,7 @@ describe "Logged in user" do
     post_question(title, content)
     expect(page).to have_content title
     expect(page).to have_content content
-    expect(page).to have_content "Your question"
+    expect(page).to have_css ".user-owned"
   end
 
   it "should not own questions they did not make"
