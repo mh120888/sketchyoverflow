@@ -15,6 +15,11 @@ describe UsersController do
     it "should show the user" do
       expect(assigns(:user)).to eq User.find(user.id)
     end
+
+    it 'should display all the user\'s questions' do
+      new_question = Question.create(title: 'New question', content: 'new content', user_id: user.id)
+      expect(assigns(:questions).last).to eq new_question
+    end
   end
 
   context "#new" do
