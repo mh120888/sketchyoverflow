@@ -18,11 +18,11 @@ class User < ActiveRecord::Base
   private
   def encrypt_credentials!
     self.password = SCrypt::Password.create(
-      self.password, 
-      key_len: 512, 
-      salt_size: 32, 
-      max_time: 2, 
-      max_mem: 0, 
+      self.password,
+      key_len: 512,
+      salt_size: 32,
+      max_time: 2,
+      max_mem: 0,
       max_memfrac: 0.5)
     self.name = Digest::SHA512.hexdigest(self.name)
   end

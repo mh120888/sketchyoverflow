@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Questions", js: true do
+describe "Questions" do
 
   context "Logged in behaviors" do
     it "create should not show when not logged in" do

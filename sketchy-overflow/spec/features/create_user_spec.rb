@@ -18,7 +18,7 @@ describe "Create User" do
       fill_in "Name", with: "Test User"
       fill_in "Password", with: "password123"
       click_button "Create User"
-      expect(page).to have_content "Test User"
+      expect(page).to have_content "Welcome to your dashboard"
     end
 
     it "should not create a user with invalid info" do
