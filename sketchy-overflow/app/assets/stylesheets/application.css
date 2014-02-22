@@ -99,7 +99,13 @@ h1 a:hover {
 }
 
 .answer form {
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+#answer_form p {
+  color: #660000;
+  margin-bottom: -10px;
+  text-align: center;
 }
 
 textarea {

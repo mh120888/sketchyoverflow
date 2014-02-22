@@ -11,7 +11,7 @@ var Answer = {
 
   appendError: function(event, xhr, status, error) {
     event.preventDefault()
-    $('#answer_form').append(xhr.responseText)
+    $('#answer_form p').text(xhr.responseText)
   }
 }
 

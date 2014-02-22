@@ -10,5 +10,10 @@ describe "Answers" do
       click_on("Create Answer")
       expect(page).to have_content("Applesauce")
     end
+    it "throws an error if create answer form is submitted without content" do
+      visit question_path(question)
+      click_on("Create Answer")
+      expect(page).to have_content("Content can't be blank")
+    end
   end
 end
