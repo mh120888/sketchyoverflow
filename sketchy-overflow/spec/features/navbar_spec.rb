@@ -8,13 +8,8 @@ describe "navbar" do
       expect(page).to have_content "Sign Up"
     end
   context "user is signed in" do
-    let!(:user) { User.create(name: 'bob', password: 'test1234') } 
     it "displays a logout link" do
-      visit new_session_path
-      fill_in 'Username', :with => 'bob'
-      fill_in 'Password', :with => 'test1234'
-      click_button "Login"
-      visit root_path
+      create_user_and_login
       expect(page).to have_content "Signout"
     end
   end
