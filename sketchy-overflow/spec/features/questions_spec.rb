@@ -14,7 +14,7 @@ describe "Questions" do
       fill_in "Password", with: "password123"
       click_button "Create User"
       visit root_path
-      expect(page).to have_content "What's your question?"
+      expect(page).to have_css "#new_question"
     end
   end
 
@@ -34,8 +34,8 @@ describe "Questions" do
         fill_in "Password", with: "password123"
         click_button "Create User"
         visit root_path
-        fill_in('Title', :with => 'Dry skin')
-        fill_in('Content', :with => 'I have dry skin. What do I do?')
+        fill_in('question_content', :with => 'Dry skin')
+        fill_in('question_title', :with => 'I have dry skin. What do I do?')
         click_on('Create Question')
         expect(current_path) == questions_path
         expect(page).to have_content('Dry skin')
