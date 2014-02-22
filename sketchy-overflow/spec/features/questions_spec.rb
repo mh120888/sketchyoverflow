@@ -1,6 +1,23 @@
 require 'spec_helper'
 
-describe "Questions" do
+describe "Questions", js: true do
+
+  context "Logged in behaviors" do
+    it "create should not show when not logged in" do
+      visit root_path
+      expect(page).not_to have_content "What's your question?"
+    end
+
+    it "create should show when logged in" do
+      visit new_user_path
+      fill_in "Name", with: "Totally New User"
+      fill_in "Password", with: "password123"
+      click_button "Create User"
+      visit root_path
+      expect(page).to have_content "What's your question?"
+    end
+  end
+
   context "#index" do
 
     let!(:question) { FactoryGirl.create :question }
@@ -12,20 +29,19 @@ describe "Questions" do
 
     context 'logged in' do
       it 'a question appears on the home page when posted' do
+        visit new_user_path
+        fill_in "Name", with: "Totally New User"
+        fill_in "Password", with: "password123"
+        click_button "Create User"
         visit root_path
-        fill_in('Title', :with => 'Dry skin') 
+        fill_in('Title', :with => 'Dry skin')
         fill_in('Content', :with => 'I have dry skin. What do I do?')
         click_on('Create Question')
         expect(current_path) == questions_path
         expect(page).to have_content('Dry skin')
       end
     end
-      
-    context 'not logged in' do
-      it 'does not display the new question form' do
-        pending
-      end
-    end
+
   end
 
   context "#show" do
@@ -41,14 +57,5 @@ describe "Questions" do
       expect(page).to have_content(answer.content)
     end
   end
-  context 'New question' do
-    it 'will appear on the home page when posted' do
-      visit root_path
-      fill_in('Title', :with => 'Dry skin') 
-      fill_in('Content', :with => 'I have dry skin. What do I do?')
-      click_on('Create Question')
-      expect(current_path) == questions_path
-      expect(page).to have_content('Dry skin')
-    end
-  end
+
 end

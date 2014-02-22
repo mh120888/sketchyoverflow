@@ -1,5 +1,8 @@
 class QuestionsController < ApplicationController
   def index
+    if session[:id]
+      @logged_in = true
+    end
     @questions = Question.all
     @question = Question.new
   end
