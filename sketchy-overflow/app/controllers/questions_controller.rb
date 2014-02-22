@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
 
   def show
     @logged_in = true if session[:id]
+    @logged_in_user_id = session[:id]
     @question = Question.find(params[:id])
     @user = @question.user
     @answers = @question.answers_by_create_date

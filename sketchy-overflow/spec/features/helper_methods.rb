@@ -12,8 +12,8 @@ module Helpers
 
   def post_question(title, content)
     visit root_path
-    fill_in('question_content', :with => title)
-    fill_in('question_title', :with => content)
+    fill_in('question_title', :with => title)
+    fill_in('question_content', :with => content)
     click_on('Create Question')
   end
 end
