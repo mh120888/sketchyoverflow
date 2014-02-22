@@ -1,7 +1,7 @@
 <nav>
   <% if session[:id] %>
     <div>
-      <%= link_to("Signout", root_path) %>
+      <%= link_to("Signout", session_path(session[:id]), :method => :delete) %>
     </div>
   <% else %>  
     <div>
