@@ -9,13 +9,14 @@ describe "login" do
   end
 
   context "can login" do
-    let!(:user) { FactoryGirl.create(:user) }
+    let!(:user) { User.create(name: 'bob', password: 'test1234') } 
     it "should create session" do
       visit new_session_path
-      fill_in 'Username', :with => user.name
-      fill_in 'Password', :with => user.password
+      fill_in 'Username', :with => 'bob'
+      fill_in 'Password', :with => 'test1234'
       click_button "Login"
-      expect(page).to have_content user.name
+      user.reload
+      expect(page).to have_content user.name.slice(0,8)
     end
 
     it "should store user id" do

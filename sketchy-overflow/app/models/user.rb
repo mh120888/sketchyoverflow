@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   validates :name, uniqueness: true
   validates :password, length: { minimum: 8 }
 
-  before_save :encrypt_credentials!
+  before_validation :hash_username!
+  before_save :encrypt_password!
 
   def self.authenticate(credentials)
     credentials[:username] ||= ""
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   private
-  def encrypt_credentials!
+  def encrypt_password!
     self.password = SCrypt::Password.create(
       self.password, 
       key_len: 512, 
@@ -24,6 +25,9 @@ class User < ActiveRecord::Base
       max_time: 2, 
       max_mem: 0, 
       max_memfrac: 0.5)
+  end
+
+  def hash_username!
     self.name = Digest::SHA512.hexdigest(self.name)
   end
 end
