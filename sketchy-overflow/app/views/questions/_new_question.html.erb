@@ -1,10 +1,18 @@
 <div class='ask-question'>
-  <p>What's your question?</p>
+  <p class="center question-text">What's your question?</p>
   <%= form_for @question do |f| %>
-    <%= f.label :title %>:
-    <%= f.text_field :title %>
-    <%= f.label :content %>:
-    <%= f.text_field :content %><br/>
-    <%= f.submit %>
+  <table class="new-question-form">
+    <tr>
+      <td class="td-right"><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td class="td-right"><%= f.label :content %></td>
+      <td><%= f.text_field :content %></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2" ><%= f.submit %></td>
+    </tr>
+  </table>
   <% end %>
 </div>
