@@ -120,18 +120,19 @@ h1 a:hover {
   font-family: 'Trade Winds', cursive;
   font-size: 1.3em;
   margin-bottom: 5px;
+}
 
 .answer form {
   margin-top: 30px;
+}
+
+textarea {
+  background-color: #dddad9;
+  font-size: 1em;
 }
 
 #answer_form p {
   color: #660000;
   margin-bottom: -10px;
   text-align: center;
-}
-
-textarea {
-  background-color: #dddad9;
-  font-size: 1em;
 }
