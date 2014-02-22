@@ -7,8 +7,6 @@ describe User do
   context "#authenticate" do
     it "should find existing user" do
       user = User.create(name: "foo", password: "bar12345")
-      puts "*" * 100
-      p user
       expect(User.authenticate({username: "foo", password: "bar12345"}).class).to be User
     end
 
