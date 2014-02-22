@@ -21,7 +21,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(params[:question])
+    user = User.find(session[:id])
+    @question = user.questions.build(params[:question])
     if @question.save
       flash[:notice] = 'Question successfully posted'
       render partial: "question", locals: { question: @question }
