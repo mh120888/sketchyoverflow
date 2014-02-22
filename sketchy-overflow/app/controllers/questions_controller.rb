@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
   def index
+    if session[:id]
+      @logged_in = true
+    end
     @questions = Question.all
+    @question = Question.new
   end
 
   def show
@@ -11,7 +15,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    # @question = Question.new
   end
 
   def create

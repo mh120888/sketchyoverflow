@@ -1,8 +1,12 @@
-<h1>Post a Question</h1>
+<div id='nav'><%= link_to "Home", root_path %></div>
 
-<p>What's your question?</p>
-<%= form_for @question do |f| %>
-  <%= f.label :question_text %>:
-  <%= f.text_field :question_text %><br />
-  <%= f.submit, "Post" %>
-<% end %>
+<div class='ask_question'>
+  <p>What's your question?</p>
+  <%= form_for @question do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %>
+    <%= f.label :content %>:
+    <%= f.text_field :content %><br/>
+    <%= f.submit %>
+  <% end %>
+</div>

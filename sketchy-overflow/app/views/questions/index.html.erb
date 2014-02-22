@@ -1,3 +1,6 @@
+<% if @logged_in %>
+  <%= render "new_question" %>
+<% end %>
 <div id="question_list">
   <% @questions.each do |question| %>
     <%= render 'question', question: question %>

@@ -1,0 +1,18 @@
+<div class='ask-question'>
+  <p class="center question-text">What's your question?</p>
+  <%= form_for @question do |f| %>
+  <table class="new-question-form">
+    <tr>
+      <td class="td-right"><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td class="td-right"><%= f.label :content %></td>
+      <td><%= f.text_field :content %></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2" ><%= f.submit %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>
