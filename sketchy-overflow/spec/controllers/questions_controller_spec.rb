@@ -24,6 +24,10 @@ describe QuestionsController do
       get :show, id: question.id
       expect(assigns(:answers)).to eq question.answers_by_create_date
     end
+    it "assigns a new answer to @answer" do
+      get :show, id: question.id
+      expect(assigns(:answer)).to be_a_new(Answer)
+    end
   end
 
   context '#new' do
