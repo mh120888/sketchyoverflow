@@ -6,7 +6,7 @@
 
 <div class="answer" id="answer_form">
   <%= form_for @answer, remote: true do |f| %>
-    <%= f.text_area(:content, size: "73x5", placeholder: "What's your sketchy answer?") %>
+    <%= f.text_area(:content, size: "89x5", placeholder: "What's your sketchy answer?") %>
     <%= f.hidden_field(:question_id, value: @question.id ) %>
     <%= f.submit %>
   <% end %>

@@ -98,17 +98,8 @@ h1 a:hover {
   padding: 10px 25px 25px 25px;
 }
 
-.center  {
-  text-align: center;
-}
-
-.td-right {
-  text-align: right;
-}
-
 .new-question-form {
   margin: 0 auto;
-  text-align: center;
   margin-bottom: 12px;
 }
 
@@ -117,9 +108,11 @@ h1 a:hover {
 }
 
 .question-text {
+  color: #45243d;
   font-family: 'Trade Winds', cursive;
-  font-size: 1.3em;
-  margin-bottom: 5px;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .answer form {
@@ -127,8 +120,38 @@ h1 a:hover {
 }
 
 textarea {
+  display: block;
+  font-family: 'Ruda', sans-serif;
+  background-color: #dddad9;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+input {
+  display: block;
+  font-family: 'Ruda', sans-serif;
   background-color: #dddad9;
   font-size: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.ask-question {
+  padding-top: 20px;
+}
+
+.ask-question textarea {
+  background-color: #dddad9;
+  font-size: 1.25em;
+}
+
+.ask-question input {
+  background-color: #dddad9;
+  font-size: 1.25em;
 }
 
 #answer_form p {
