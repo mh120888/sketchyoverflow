@@ -1,3 +1,14 @@
+<div class='ask-question'>
+  <p>What's your question?</p>
+  <%= form_for @question do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %>
+    <%= f.label :content %>:
+    <%= f.text_field :content %><br/>
+    <%= f.submit %>
+  <% end %>
+</div>
+
 <div id="question_list">
   <% @questions.each do |question| %>
     <%= render 'question', question: question %>
