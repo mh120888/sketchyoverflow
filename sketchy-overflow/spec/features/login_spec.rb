@@ -7,7 +7,6 @@ describe "login" do
       expect(page).to have_content("login")
     end
   end
-
   context "can login" do
     let!(:user) { User.create(name: 'bob', password: 'test1234') } 
     it "should create session" do
@@ -18,11 +17,12 @@ describe "login" do
       user.reload
       expect(page).to have_content user.name.slice(0,8)
     end
-
+    it "should be able to log in" do
+      pending
+    end
     it "should store user id" do
       pending
     end
-
   end
 end
 

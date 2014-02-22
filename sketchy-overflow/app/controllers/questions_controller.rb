@@ -1,5 +1,9 @@
 class QuestionsController < ApplicationController
   def index
+    if session[:id]
+      @logged_in = true
+      @user_id = session[:id]
+    end
     @questions = Question.all
     @question = Question.new
   end
@@ -19,7 +23,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(params[:question])
     if @question.save
       flash[:notice] = 'Question successfully posted'
-      redirect_to root_path
+      render partial: "question", locals: { question: @question }
     else
       flash[:notice] = 'Fail'
       render :new

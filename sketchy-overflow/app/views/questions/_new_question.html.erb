@@ -1,0 +1,11 @@
+<div class="question">
+  <div class='ask-question'>
+<!--     <p class="center question-text">What's your sketchy question?</p> -->
+    <%= form_for @question, remote: true do |f| %>
+      <%= f.text_field :title, placeholder: "Question title" %></td>
+      <%= f.text_area :content, size: "112x5", placeholder: "What's your sketchy question?" %></td>
+      <%= f.hidden_field(:user_id, value: @user_id ) %>
+      <%= f.submit %></td>
+    <% end %>
+  </div>
+</div>

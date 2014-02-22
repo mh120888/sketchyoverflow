@@ -7,6 +7,7 @@ var Answer = {
   appendAnswer: function(event, data, status, xhr) {
     event.preventDefault()
     $('.answers_list').prepend(data)
+    $('#answer_form textarea').val('')
   },
 
   appendError: function(event, xhr, status, error) {
