@@ -4,14 +4,14 @@
   <p class="info">Posted by '<%= Faker::Name.first_name %>' (<%= @user.name[0,8] %>) at <%= @question.created_at %></p>
 </div>
 
-<div class="answers-list">
-  <div class="answer" id="answer_form">
-    <%= form_for @answer, remote: true do |f| %>
-      <%= f.text_area(:content, size: "73x5", placeholder: "What's your sketchy answer?") %>
-      <%= hidden_field(:) %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+<div class="answer" id="answer_form">
+  <%= form_for @answer, remote: true do |f| %>
+    <%= f.text_area(:content, size: "73x5", placeholder: "What's your sketchy answer?") %>
+    <%= f.hidden_field(:question_id, value: @question.id ) %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<div class="answers_list">
   <% @answers.each do |answer| %>
     <%= render 'answers/answer', answer: answer %>
   <% end %>
