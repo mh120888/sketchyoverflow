@@ -121,6 +121,7 @@ h1 a:hover {
 }
 
 textarea {
+  width: 90%;
   display: block;
   font-family: 'Ruda', sans-serif;
   background-color: #dddad9;
