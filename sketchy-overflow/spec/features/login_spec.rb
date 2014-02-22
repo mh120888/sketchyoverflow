@@ -10,7 +10,6 @@ describe "login" do
 
   context "can login" do
     let!(:user) { FactoryGirl.create(:user) }
-
     it "should create session" do
       visit new_session_path
       fill_in 'Username', :with => user.name
@@ -20,8 +19,9 @@ describe "login" do
     end
 
     it "should store user id" do
-
+      pending
     end
+
   end
 end
 
