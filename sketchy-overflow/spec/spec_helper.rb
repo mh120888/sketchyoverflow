@@ -29,3 +29,12 @@ RSpec.configure do |config|
 
   config.order = "random"
 end
+
+def create_user_and_login
+  User.create(name: 'bob', password: 'test1234')
+  visit new_session_path
+  fill_in 'Username', :with => 'bob'
+  fill_in 'Password', :with => 'test1234'
+  click_button "Login"
+  visit root_path
+end
