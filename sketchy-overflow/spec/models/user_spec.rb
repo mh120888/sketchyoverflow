@@ -15,19 +15,22 @@ describe User do
     end
   end
 
-  describe "#encrypt_credentials!" do
+  describe "#hash_username!" do
+    it "hashes the user's username using SHA512" do
+      user = User.create(name: "bob", password: "test1234")
+      user.reload
+      expect(user.name).not_to eq("bob")
+      expect(user.name.length).to eq(128)
+    end
+  end
+  
+  describe "#encrypt_password!" do
     context "before saving to the database" do
       it "encrypts the user's password using SCrypt" do
         user = User.create(name: "bob", password: "test1234")
         user.reload
         expect(user.password).not_to eq("test1234")
         expect(SCrypt::Password.new(user.password)).to be_an_instance_of SCrypt::Password
-      end
-      it "hashes the user's username using SHA512" do
-        user = User.create(name: "roger", password: "test1234")
-        user.reload
-        expect(user.name).not_to eq("roger")
-        expect(user.name.length).to eq(128)
       end
     end
   end
