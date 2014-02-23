@@ -32,16 +32,17 @@ ActiveRecord::Schema.define(:version => 20140222235101) do
     t.integer "user_id"
   end
 
-  create_table "upvotes", :force => true do |t|
-    t.integer "question_id"
-    t.integer "user_id"
-  end
-
   create_table "users", :force => true do |t|
     t.text     "name"
     t.text     "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer "question_id"
+    t.integer "user_id"
+    t.integer "value"
   end
 
 end

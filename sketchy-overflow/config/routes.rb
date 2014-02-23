@@ -3,6 +3,6 @@ SketchyOverflow::Application.routes.draw do
   resources :users
   resources :questions, except: [:edit, :update, :destroy]
   resources :answers, only: [:create]
-  resources :upvotes
+  resources :votes
   root to: 'questions#index'
 end
