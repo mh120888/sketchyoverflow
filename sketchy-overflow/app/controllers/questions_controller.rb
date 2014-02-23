@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
     @vote = Vote.new
     @votes_count = @question.votes.count
     @net_votes = @question.calculate_net_votes
+    @vote_answer = Vote.new
   end
 
   def new

@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     (question.votes.select {|vote| vote.user_id == self.id} ).length > 0
   end
 
+  def has_voted_on_answer?(answer)
+    (answer.votes.select {|vote| vote.user_id == self.id} ).length > 0
+  end
+
   private
   def encrypt_password!
     self.password = SCrypt::Password.create(
