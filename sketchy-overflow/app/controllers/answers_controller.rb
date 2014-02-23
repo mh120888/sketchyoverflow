@@ -14,9 +14,14 @@ class AnswersController < ApplicationController
   end
 
   def best
-    answer = Answer.find(params[:answer_id])
+    answer = Answer.find(5)
     question = answer.question
-    question_answers = question.answers
+    question.answers.each do |q_answer|
+     q_answer.best = 0
+     q_answer.save
+    end
+    answer.best = 1
+    answer.save
     render partial: 'best'
   end
 end

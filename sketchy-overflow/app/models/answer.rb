@@ -1,5 +1,5 @@
 class Answer < ActiveRecord::Base
-  attr_accessible :content, :question_id
+  attr_accessible :content, :question_id, :best
   belongs_to :question
   has_many :votes
   validates :content, presence: true
@@ -15,5 +15,5 @@ class Answer < ActiveRecord::Base
   def calculate_net_votes
     upvotes - downvotes
   end
-  
+
 end

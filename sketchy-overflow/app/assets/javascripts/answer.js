@@ -29,13 +29,13 @@ var Best = {
   },
 
   confirmBest: function(event, data) {
-    event.preventDefault()
     debugger
+    event.preventDefault()
   },
 
   showError: function(event) {
-    event.preventDefault()
     debugger
+    event.preventDefault()
   }
 }
 
