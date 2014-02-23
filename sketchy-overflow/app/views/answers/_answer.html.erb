@@ -4,14 +4,14 @@
     <% if !User.find(session[:id]).has_voted_on_answer?(answer) %>
       <%= form_for @vote_answer do |f| %>
         <%= f.hidden_field(:user_id, value: session[:id] ) %>
-        <%= f.hidden_field(:question_id, value: @question.id ) %>
+        <%= f.hidden_field(:question_id, value: params[:id] ) %>
         <%= f.hidden_field(:answer_id, value: answer.id ) %>
         <%= f.hidden_field(:value, value: 1 ) %>
         <%= f.submit 'Upvote' %>
       <% end %>
       <%= form_for @vote_answer do |f| %>
         <%= f.hidden_field(:user_id, value: session[:id] ) %>
-        <%= f.hidden_field(:question_id, value: @question.id ) %>
+        <%= f.hidden_field(:question_id, value: params[:id] ) %>
         <%= f.hidden_field(:answer_id, value: answer.id ) %>
         <%= f.hidden_field(:value, value: -1 ) %>
         <%= f.submit 'Downvote' %>
