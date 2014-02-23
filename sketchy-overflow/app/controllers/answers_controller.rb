@@ -12,4 +12,11 @@ class AnswersController < ApplicationController
       render text: new_answer.errors.full_messages.join(', '), status: :unprocessable_entity
     end
   end
+
+  def best
+    answer = Answer.find(params[:answer_id])
+    question = answer.question
+    question_answers = question.answers
+    render partial: 'best'
+  end
 end

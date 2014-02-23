@@ -22,6 +22,10 @@
   <p>Net votes: <%= answer.calculate_net_votes %></p>
   <p class="info">Posted by '<%= Faker::Name.first_name %>' at <%= answer.created_at %></p>
   <% if answer.question.user_id == @logged_in_user_id %>
-    <p>Best Answer</p>
+    <%= form_tag( best_answer_path, {remote: true,
+     method: "put", class: "best-form"}) do %>
+      <%= hidden_field_tag(:answer_id, answer.id ) %>
+      <%= submit_tag("Best Answer") %>
+    <% end %>
   <% end %>
 </div>

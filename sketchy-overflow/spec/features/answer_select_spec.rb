@@ -31,7 +31,23 @@ describe "Logged in user", js:true do
     end
 
     it "should be able to select best answer" do
-
+      user = create_and_login(user_attr)
+      title = "this is title"
+      content = "this is content"
+      post_question(title, content)
+      wait_for_ajax
+      click_link title
+      wait_for_ajax
+      answer = "this is answer"
+      fill_in 'answer_content', with: answer
+      click_button('Create Answer')
+      wait_for_ajax
+      expect(page).to have_content answer
+      click_button "Best Answer"
+      wait_for_ajax
+      expect(page).to have_css ".best-answer"
+      visit(current_path)
+      expect(page).to have_css ".best-answer"
     end
 
     it "should have 0 or 1 best answer"

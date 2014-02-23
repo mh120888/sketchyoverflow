@@ -4,6 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       col.text :content
       col.belongs_to :question
       col.integer :votes
+      col.integer :best, default: 0
       col.timestamps
     end
   end

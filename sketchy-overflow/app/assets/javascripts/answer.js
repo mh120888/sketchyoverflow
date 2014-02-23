@@ -13,9 +13,33 @@ var Answer = {
   appendError: function(event, xhr, status, error) {
     event.preventDefault()
     $('#answer_form p').text(xhr.responseText)
+  },
+
+}
+
+var Best = {
+  bindEvents: function() {
+    $('form.best-form').on('ajax:success', this.confirmBest)
+    $('form.best-form').on('ajax:error', this.showError)
+  },
+
+  markBest: function() {
+    $(this).parent().append("new text")
+    $(this).remove()
+  },
+
+  confirmBest: function(event, data) {
+    event.preventDefault()
+    debugger
+  },
+
+  showError: function(event) {
+    event.preventDefault()
+    debugger
   }
 }
 
 $(document).ready(function() {
   Answer.bindEvents()
+  Best.bindEvents()
 })
