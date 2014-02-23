@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
     if session[:id]
       @logged_in = true
     end
+    @vote_answer = Vote.new
     new_answer = Answer.new(params[:answer])
     if new_answer.save
       render partial: 'answer', locals: { answer: new_answer }
