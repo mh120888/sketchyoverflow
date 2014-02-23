@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
   end
 
   def best
-    answer = Answer.find(5)
+    answer = Answer.find(params[:answer_id])
     question = answer.question
     question.answers.each do |q_answer|
      q_answer.best = 0

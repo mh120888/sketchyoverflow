@@ -1,4 +1,7 @@
 <div class="answer">
+  <% if answer.best == 1 %>
+    <h1>Best Answer</h1>
+  <% end %>
   <p><%= answer.content %></p>
   <% if session[:id] %>
     <% if !User.find(session[:id]).has_voted_on_answer?(answer) %>
