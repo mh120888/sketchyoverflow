@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
     @answers = @question.answers_by_create_date
     @answer = Answer.new
     @upvote = Upvote.new
+    @upvotes_count = @question.upvotes.count
   end
 
   def new

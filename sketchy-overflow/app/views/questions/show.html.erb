@@ -8,6 +8,7 @@
       <%= f.submit %>
     <% end %>
   <% end %>
+  <p>Upvotes: <%= @upvotes_count %></p>
   <p class="info">Posted by '<%= Faker::Name.first_name %>' (<%= @user.name[0,8] %>) at <%= @question.created_at %></p>
 </div>
 <% if @logged_in %>
