@@ -2,7 +2,7 @@
   <h2><%= @question.title %></h2>
   <p><%= @question.content %></p>
   <% if session[:id] %>
-    <% if !Vote.has_this_user_voted?(User.find(session[:id]), @question) %>
+    <% if !User.find(session[:id]).has_voted_on_question?(@question) %>
       <%= form_for @vote, remote:true do |f| %>
         <%= f.hidden_field(:user_id, value: session[:id] ) %>
         <%= f.hidden_field(:question_id, value: @question.id ) %>
