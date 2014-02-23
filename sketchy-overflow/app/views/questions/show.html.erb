@@ -1,6 +1,24 @@
 <div class="full-question">
   <h2><%= @question.title %></h2>
   <p><%= @question.content %></p>
+  <% if session[:id] %>
+    <% if !User.find(session[:id]).has_voted_on_question?(@question) %>
+      <%= form_for @vote, remote:true do |f| %>
+        <%= f.hidden_field(:user_id, value: session[:id] ) %>
+        <%= f.hidden_field(:question_id, value: @question.id ) %>
+        <%= f.hidden_field(:value, value: 1 ) %>
+        <%= f.submit 'Upvote' %>
+      <% end %>
+      <%= form_for @vote, remote:true do |f| %>
+        <%= f.hidden_field(:user_id, value: session[:id] ) %>
+        <%= f.hidden_field(:question_id, value: @question.id ) %>
+        <%= f.hidden_field(:value, value: -1 ) %>
+        <%= f.submit 'Downvote' %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <p># of Votes: <%= @votes_count %></p>
+  <p>Net Votes: <%= @net_votes %></p>
   <p class="info">Posted by '<%= Faker::Name.first_name %>' (<%= @user.name[0,8] %>) at <%= @question.created_at %></p>
 </div>
 <% if @logged_in %>
