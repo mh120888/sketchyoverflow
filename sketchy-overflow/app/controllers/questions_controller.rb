@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
     @answers = @question.answers_by_create_date
     @answer = Answer.new
     @vote = Vote.new
-    @votes_count = @question.votes.count
+    @votes_count = @question.calculate_net_votes
     @net_votes = @question.calculate_net_votes
     @vote_answer = Vote.new
   end

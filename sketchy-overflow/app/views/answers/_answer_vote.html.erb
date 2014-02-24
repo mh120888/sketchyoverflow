@@ -1,0 +1,25 @@
+<div class="voting-area">
+  <div class="upvote">
+    <%= form_for @vote_answer do |f| %>
+      <%= f.hidden_field(:user_id, value: session[:id] ) %>
+      <%= f.hidden_field(:question_id, value: params[:id] ) %>
+      <%= f.hidden_field(:answer_id, value: answer.id ) %>
+      <%= f.hidden_field(:value, value: 1 ) %>
+      <%= link_to_submit do %>
+        <i class="fa fa-caret-up fa-3x"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="vote-count-question"><%= answer.calculate_net_votes %></div>
+  <div class="downvote">
+    <%= form_for @vote_answer do |f| %>
+      <%= f.hidden_field(:user_id, value: session[:id] ) %>
+      <%= f.hidden_field(:question_id, value: params[:id] ) %>
+      <%= f.hidden_field(:answer_id, value: answer.id ) %>
+      <%= f.hidden_field(:value, value: -1 ) %>
+      <%= link_to_submit do %>
+        <i class="fa fa-caret-down fa-3x"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

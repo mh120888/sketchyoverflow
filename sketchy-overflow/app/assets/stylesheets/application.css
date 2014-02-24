@@ -85,9 +85,9 @@ h1 a:hover {
 
 .info {
   border-top: 1px solid #6a5c56;
-  margin-top: 50px;
   padding-top: 15px;
   color: #6a5c56;
+  margin: 0;
 }
 
 .answer {
@@ -195,4 +195,88 @@ form {
 
 .question.user-owned {
   background: #93b559;
+}
+
+/*******************
+** VOTING STYLES
+*******************/
+
+
+.voting-area {
+  display: inline-block;
+  float: left;
+}
+
+.voting-area a {
+  color: #075792;
+}
+
+.upvote {
+  display: inline-block;
+}
+
+.upvote a:hover {
+  color: green;
+}
+
+.upvote form {
+  background-color: transparent;
+}
+
+.downvote form {
+  background-color: transparent;
+}
+
+.downvote {
+  display: inline-block;
+}
+
+.downvote a:hover {
+  color: #ff0000;
+}
+
+.answer-content {
+  display: inline-block;
+  margin-left: 20px;
+  float: left;
+}
+
+#new_vote {
+  margin: 0;
+  padding: 0;
+}
+
+.vote-count {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2em;
+}
+
+.vote-count-question {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.answer-content-container {
+  min-height: 146px;
+}
+
+.question-content-container {
+  min-height: 168px;
+}
+
+.question-content {
+  margin-left: 32px;
+  float: left;
+  width: 85%;
+}
+
+.question-content h2 {
+  margin: 14px 0;
+}
+
+.disabled {
+  color: grey;
 }
