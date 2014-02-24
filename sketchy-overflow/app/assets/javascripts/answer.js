@@ -29,7 +29,8 @@ var Best = {
   },
 
   confirmBest: function(event, data) {
-    debugger
+    $('.best-answer').remove()
+    $(this).parent().prepend(data)
     event.preventDefault()
   },
 
