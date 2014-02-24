@@ -251,6 +251,31 @@ form {
   font-size: 1.2em;
 }
 
+.vote-count-question {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.4em;
+  margin: 8px 0;
+}
+
 .answer-content-container {
   min-height: 134px;
+}
+
+.question-content-container {
+  min-height: 168px;
+}
+
+.question-content {
+  margin-left: 32px;
+  float: left;
+  width: 85%;
+}
+
+.question-content h2 {
+  margin: 14px 0;
+}
+
+.disabled {
+  color: grey;
 }

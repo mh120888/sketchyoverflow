@@ -35,8 +35,8 @@ var Best = {
   },
 
   showError: function(event) {
-    debugger
     event.preventDefault()
+    console.log("There was an error")
   }
 }
 
