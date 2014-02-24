@@ -19,8 +19,8 @@ var Answer = {
 
 var Best = {
   bindEvents: function() {
-    $('form.best-form').on('ajax:success', this.confirmBest)
-    $('form.best-form').on('ajax:error', this.showError)
+    $('#container').on('ajax:success', 'form.best-form', this.confirmBest)
+    $('#container').on('ajax:error', 'form.best-form', this.showError)
   },
 
   markBest: function() {
