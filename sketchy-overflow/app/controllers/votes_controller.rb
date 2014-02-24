@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   def create
     answer = Vote.create(params[:vote]).answer
-    render json: answer.calculate_net_votes
+    render partial: 'answers/blank_answer', locals: { count: answer.calculate_net_votes }
   end
 end

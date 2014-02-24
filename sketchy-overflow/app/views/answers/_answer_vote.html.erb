@@ -10,7 +10,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="vote-count"><%= answer.calculate_net_votes %></div>
+  <div class="vote-count-question"><%= answer.calculate_net_votes %></div>
   <div class="downvote">
     <%= form_for @vote_answer do |f| %>
       <%= f.hidden_field(:user_id, value: session[:id] ) %>

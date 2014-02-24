@@ -87,6 +87,7 @@ h1 a:hover {
   border-top: 1px solid #6a5c56;
   padding-top: 15px;
   color: #6a5c56;
+  margin: 0;
 }
 
 .answer {
@@ -254,12 +255,12 @@ form {
 .vote-count-question {
   text-align: center;
   vertical-align: middle;
-  font-size: 1.4em;
-  margin: 8px 0;
+  font-size: 1.2em;
+  margin: 0;
 }
 
 .answer-content-container {
-  min-height: 134px;
+  min-height: 146px;
 }
 
 .question-content-container {

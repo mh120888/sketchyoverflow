@@ -46,10 +46,7 @@ var Votes = {
   },
 
   confirmUpvote: function(event, data) {
-    count = $(this).parent().parent().find('.vote-count').html()
-    debugger
-    new_count = Number(count) + Number(data)
-    $(this).parent().parent().find('.vote-count').html(new_count)
+    $(this).parent().parent().html(data)
   },
 
   showError: function(event, xhr) {
