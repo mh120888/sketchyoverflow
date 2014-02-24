@@ -46,6 +46,6 @@ Yup, easily cracked.
 
 ![](http://i7.minus.com/i6ibKx1P2GrBR.png)  
 
-This is why we chose SCrypt.
+SHA can be made safer by adding a salt that is the same size as the output string of the SHA implementation you're using. However, SHA was developed by the NSA, so keep that in mind.
 
 
