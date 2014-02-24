@@ -13,8 +13,7 @@ var Answer = {
   appendError: function(event, xhr, status, error) {
     event.preventDefault()
     $('#answer_form p').text(xhr.responseText)
-  },
-
+  }
 }
 
 var Best = {
@@ -40,7 +39,25 @@ var Best = {
   }
 }
 
+var Votes = {
+  bindEvents: function() {
+    $('.answers_list').on('ajax:success', 'form.new_vote', this.confirmUpvote)
+    $('.answers_list').on('ajax:error', 'form.new_vote', this.showError)
+  },
+
+  confirmUpvote: function(event, data) {
+    count = $(this).parent().parent().find('.vote-count').html()
+    debugger
+    new_count = Number(count) + Number(data)
+    $(this).parent().parent().find('.vote-count').html(new_count)
+  },
+
+  showError: function(event, xhr) {
+  }
+}
+
 $(document).ready(function() {
   Answer.bindEvents()
   Best.bindEvents()
+  Votes.bindEvents()
 })
