@@ -42,7 +42,10 @@ Digest::SHA512.hexdigest("hello")
 ```
 Go to http://www.crackstation.net and paste that hash in.
 
+Yup, easily cracked.
 
+![](http://i7.minus.com/i6ibKx1P2GrBR.png)  
 
+This is why we chose SCrypt.
 
 
