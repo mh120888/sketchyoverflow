@@ -1,4 +1,4 @@
-<div class="question">
+<div class="question <%= 'user-owned' if question.user_id == @user_id %>">
   <h3><%= link_to question.title, question_path(question) %></h3>
   <p><%= question.content %></p>
 </div>

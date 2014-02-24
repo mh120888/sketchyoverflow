@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(:version => 20140222235101) do
     t.text     "content"
     t.integer  "question_id"
     t.integer  "votes"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "best",        :default => 0
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "questions", :force => true do |t|

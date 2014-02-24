@@ -13,9 +13,34 @@ var Answer = {
   appendError: function(event, xhr, status, error) {
     event.preventDefault()
     $('#answer_form p').text(xhr.responseText)
+  },
+
+}
+
+var Best = {
+  bindEvents: function() {
+    $('#container').on('ajax:success', 'form.best-form', this.confirmBest)
+    $('#container').on('ajax:error', 'form.best-form', this.showError)
+  },
+
+  markBest: function() {
+    $(this).parent().append("new text")
+    $(this).remove()
+  },
+
+  confirmBest: function(event, data) {
+    $('.best-answer').remove()
+    $(this).parent().prepend(data)
+    event.preventDefault()
+  },
+
+  showError: function(event) {
+    debugger
+    event.preventDefault()
   }
 }
 
 $(document).ready(function() {
   Answer.bindEvents()
+  Best.bindEvents()
 })

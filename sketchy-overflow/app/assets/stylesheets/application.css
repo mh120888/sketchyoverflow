@@ -192,3 +192,7 @@ form {
   color: white;
   padding: 20px;
 }
+
+.question.user-owned {
+  background: #93b559;
+}

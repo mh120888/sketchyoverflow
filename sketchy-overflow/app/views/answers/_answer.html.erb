@@ -1,4 +1,9 @@
 <div class="answer">
+  <% if answer.best == 1 %>
+    <div class="best-answer">
+      <h1>Best Answer</h1>
+    </div>
+  <% end %>
   <p><%= answer.content %></p>
   <% if session[:id] %>
     <% if !User.find(session[:id]).has_voted_on_answer?(answer) %>
@@ -21,4 +26,11 @@
   <p># of votes: <%= answer.votes.count %> </p>
   <p>Net votes: <%= answer.calculate_net_votes %></p>
   <p class="info">Posted by '<%= Faker::Name.first_name %>' at <%= answer.created_at %></p>
+  <% if answer.question.user_id == @logged_in_user_id %>
+    <%= form_tag( best_answer_path, {remote: true,
+     method: "put", class: "best-form"}) do %>
+      <%= hidden_field_tag(:answer_id, answer.id ) %>
+      <%= submit_tag("Best Answer") %>
+    <% end %>
+  <% end %>
 </div>

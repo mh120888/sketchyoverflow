@@ -9,7 +9,8 @@ var Question = {
   },
 
   appendQuestion: function(e, data) {
-    $('#question_list').prepend(data)
+    var $user_question = $(data).addClass('user-owned')
+    $('#question_list').prepend($user_question)
   },
 
   displayError: function() {

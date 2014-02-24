@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
 
   def show
     @logged_in = true if session[:id]
+    @logged_in_user_id = session[:id]
     @question = Question.find(params[:id])
     @user = @question.user
     @answers = @question.answers_by_create_date
@@ -25,7 +26,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(params[:question])
+    user = User.find(session[:id])
+    @question = user.questions.build(params[:question])
     if @question.save
       flash[:notice] = 'Question successfully posted'
       render partial: "question", locals: { question: @question }
